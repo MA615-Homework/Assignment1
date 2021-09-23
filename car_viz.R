@@ -20,11 +20,9 @@ source(file = "hand_functions.R", echo = TRUE)
 sp_out <- sum_special(mtcars_mpg2)
 
 
-# library(esquisse)
-# 
-# esquisser(data = mtcars_mpg2, viewer = "browser")
+library(esquisse)
 
-
+esquisser(data = mtcars_mpg2, viewer = "browser")
 
 ggplot(mtcars_mpg2) +
   aes(x = disp, y = mpg) +
@@ -41,8 +39,8 @@ ggplot(mtcars_mpg2, aes(x=as.factor(cyl), y=mpg)) +
   geom_boxplot(fill="slateblue", alpha=0.2) + 
   xlab("cyl")
 
+#We need to use as.factor function to change the type of cyl to factor.
 
-
-
-
+# Use the following code to change the type of data.
+mtcars_mpg2$cyl <- as.factor(mtcars_mpg2$cyl)
 
